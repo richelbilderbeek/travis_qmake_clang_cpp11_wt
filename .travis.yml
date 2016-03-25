@@ -1,0 +1,54 @@
+language: cpp
+compiler: gcc
+sudo: true
+
+addons:
+  apt:
+    sources:
+    #- boost-latest
+    - ubuntu-toolchain-r-test
+    packages:
+    - gcc-5
+    - g++-5
+    #- libboost1.55-all-dev
+    #- libboost1.46-all-dev
+    #- libwt-dev
+    #- witty-dev
+    #- witty
+    #- witty-doc
+    #- witty-dbg
+    #- witty-examples
+
+before_install:
+  - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+  - sudo add-apt-repository -y ppa:pgquiles/wt
+  - sudo apt-get update -qq
+
+install: 
+  - sudo apt-get install -qq g++-5
+  - sudo apt-get install witty witty-dbg witty-dev witty-doc
+  #- sudo apt-get install libboost-serialization1.46-dev
+  #- sudo apt-get install libboost-date-time1.46-dev
+  #- sudo apt-get install libboost-date-time-dev
+  #- sudo apt-get install libboost-filesystem-dev
+  #- sudo apt-get install libboost-regex-dev
+  #- sudo apt-get install libboost-signals-dev
+  #- sudo apt-get install libboost-thread-dev 
+  #- sudo apt-get install libboost-dev
+  #- sudo apt-get install libwt-dev
+  #- sudo apt-get install witty-dev
+  #- sudo apt-get install libboost1.46-dev
+  #- sudo apt-get install libboost1.55-dev
+  #- sudo apt-get install libwt-dev
+  #- sudo apt-get install -qq witty-dev
+
+script: 
+ - apt-cache search libboost
+ - apt-cache search witty
+ - apt-cache search libwt
+ - ./build.sh
+
+
+
+
+

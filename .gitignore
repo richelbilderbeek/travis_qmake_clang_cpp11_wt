@@ -26,3 +26,10 @@
 *.exe
 *.out
 *.app
+*.pro.user
+Makefile
+moc_*
+ui_*
+qrc_*
+.nfs*
+travis_qmake_gcc_cpp11_wt
